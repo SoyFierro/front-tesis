@@ -3,6 +3,12 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
+interface Cell {
+  value: number;
+  rowIndex: number;
+  colIndex: number;
+}
+
 @Component({
   selector: 'app-matriz',
   templateUrl: './matriz.component.html',
@@ -12,7 +18,7 @@ export class MatrizComponent implements OnInit{
 
   filas: number = 5;
   columnas: number = 5;
-  matriz: number[][] = [];
+  matriz: Cell[][] = [];
   columnasArray: number[] = [];
   pesos: number[] = []; // Array para almacenar los pesos
   nombresFilasIzquierda: string[] = []; // Array para almacenar los nombres de las filas a la izquierda de la matriz
@@ -49,9 +55,9 @@ export class MatrizComponent implements OnInit{
 
     // Generar la matriz con valores de entrada
     for (let i = 0; i < this.filas; i++) {
-        const fila: number[] = [];
+        const fila: Cell[] = [];
         for (let j = 0; j < this.columnas; j++) {
-            fila.push(0); // Puedes inicializar los valores como desees
+            fila.push({ value: 0, rowIndex: i, colIndex: j }); // Puedes inicializar los valores como desees
         }
         this.matriz.push(fila);
     }
@@ -70,12 +76,14 @@ export class MatrizComponent implements OnInit{
 
   
   realizarCalculoTopsis(): void {
+    // Extraer solo los valores numéricos de la matriz
+    const raw_data = this.matriz.map(row => row.map(cell => cell.value));
     // Construir el objeto JSON con los datos recolectados
     const data = {
       weights: this.pesos,
       attributes: this.nombresFilasSuperior,
       candidates: this.nombresFilasIzquierda,
-      raw_data: this.matriz,
+      raw_data: raw_data,
       benefit_attributes: [0, 0, 0, 0, 0] // Agregar el campo benefit_attributes
     };
 
@@ -112,6 +120,18 @@ export class MatrizComponent implements OnInit{
     }
   );
   }
+
+  actualizarValor(event: Event, cell: Cell): void {
+    const valor = (event.target as HTMLInputElement).value;
+    const newValue = parseInt(valor, 10);
+    if (!isNaN(newValue)) {
+      cell.value = newValue;
+    }
+  }
+
+
+
+
 
   parseOutput(output: string): any[] {
     // Dividir el output en secciones basadas en los saltos de línea
