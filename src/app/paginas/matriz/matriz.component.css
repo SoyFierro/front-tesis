@@ -1,0 +1,51 @@
+.custom-input {
+    width: 80px; /* Personaliza el ancho como desees */
+    height: 30px; /* Personaliza la altura como desees */
+    font-size: 12px; /* Personaliza el tamaño de la fuente como desees */
+}
+.form-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative; /* Cambiado a relative */
+    left: 600px; /* Mueve el contenedor px a la derecha */
+    top: -70px;
+    width: 400px; /* Ancho fijo */
+    margin-left: auto; /* Centra horizontalmente */
+    margin-right: auto; /* Centra horizontalmente */
+}
+.custom-navbar {
+    background-color: #cbe1f0; /* Cambia el color de fondo a azul */
+    padding: 1rem 0; /* Aumenta el relleno arriba y abajo del navbar */
+    font-size: 1.2rem; /* Aumenta el tamaño de la fuente */
+}
+.matriz-table {
+    margin-top: -50px; /* Mueve la tabla hacia arriba */
+}
+
+
+
+
+
+.output-container {
+    display: flex;
+    justify-content: center;
+}
+  
+.output-box {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-top: 20px;
+    width: 100%; /* Cambiar el ancho del cuadro según sea necesario */
+    text-align: left; /* Alinear el texto a la izquierda */
+}
+  
+.output-row {
+    display: flex;
+    justify-content: space-between;
+}
+  
+.output-row div {
+    margin-bottom: 5px;
+}
