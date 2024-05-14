@@ -51,7 +51,7 @@ export class MatrizComponent implements OnInit{
     this.nombresFilasIzquierda = Array.from(Array(this.filas).keys()).map(i => `A${i + 1}`);
 
     // Generar los nombres de las filas para los encabezados en la parte superior de la matriz
-    this.nombresFilasSuperior = Array.from(Array(this.filas).keys()).map(i => `C${i + 1}`);
+    this.nombresFilasSuperior = Array.from(Array(this.columnas).keys()).map(i => `C${i + 1}`);
 
     // Generar la matriz con valores de entrada
     for (let i = 0; i < this.filas; i++) {
@@ -123,7 +123,7 @@ export class MatrizComponent implements OnInit{
 
   actualizarValor(event: Event, cell: Cell): void {
     const valor = (event.target as HTMLInputElement).value;
-    const newValue = parseInt(valor, 10);
+    const newValue = parseFloat(valor);
     if (!isNaN(newValue)) {
       cell.value = newValue;
     }
