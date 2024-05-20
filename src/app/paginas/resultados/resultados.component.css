@@ -1,0 +1,86 @@
+.output-container {
+  display: flex;
+  justify-content: center;
+}
+
+.output-box {
+  width: 70%; /* Ajustar el ancho al 100% para permitir expansión */
+  margin-top: 20px;
+}
+
+.result-section {
+  margin-bottom: 400px; /* Este es para reducir el espacio entre cada sección de resultados */
+}
+
+.result-section h4 {
+  background-color: #f2f2f2;
+  padding: 10px;
+}
+
+.result-table {
+  width: 100%; /* Permite que la tabla ocupe el ancho completo del contenedor */
+  border-collapse: collapse; /* Colapsa los bordes para una mejor presentación */
+}
+
+.result-table td {
+  padding: 5px 10px; /* Espaciado interno para celdas */
+  border: 1px solid #ddd; /* Borde para celdas */
+  text-align: left; /* Alineación de texto a la izquierda */
+}
+
+.result-item {
+  margin-bottom: 5px;
+  font-size: 1rem; /* Tamaño de fuente más grande */
+  font-family: 'Arial', sans-serif; /* Estilo de fuente de Bootstrap */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.custom-navbar {
+  font-size: 1.25rem; /* Aumenta el tamaño de la fuente del navbar */
+  padding: -1rem 0.5rem; /* Aumenta el padding del navbar */
+}
+
+.custom-navbar .nav-link {
+  font-size: 1.5rem; /* Aumenta el tamaño de la fuente de los links */
+  padding: 0.5rem 1rem; /* Aumenta el padding de los links */
+}
+
+.custom-navbar .navbar-toggler {
+  font-size: 1.25rem; /* Aumenta el tamaño del texto del toggler */
+  padding: 0.75rem; /* Aumenta el padding del toggler */
+}
+
+.custom-navbar .navbar-brand {
+  font-size: 1.5rem; /* Aumenta el tamaño del texto de la marca */
+}
+
+@media (min-width: 992px) {
+  .custom-navbar .navbar-nav .nav-link {
+      padding-right: 2rem; /* Ajusta el padding para pantallas grandes */
+      padding-left: 2rem;
+  }
+}
+
+
+
+  
+  

@@ -2,6 +2,7 @@ import { Component, OnInit, ElementRef, ViewChild  } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import { DataService } from '../servicios/data.service';
 
 interface Cell {
   value: number;
@@ -16,8 +17,8 @@ interface Cell {
 })
 export class MatrizComponent implements OnInit{
 
-  filas: number = 5;
-  columnas: number = 5;
+  filas: number | null = null;
+  columnas: number | null = null;;
   matriz: Cell[][] = [];
   columnasArray: number[] = [];
   pesos: number[] = []; // Array para almacenar los pesos
@@ -29,7 +30,7 @@ export class MatrizComponent implements OnInit{
 
   @ViewChild('inputElements', { static: false }) inputElements: ElementRef[];
   
-  constructor(private http:HttpClient, private router: Router, private sanitizer: DomSanitizer) {
+  constructor(private http:HttpClient, private router: Router, private sanitizer: DomSanitizer, private dataService: DataService) {
     this.inputElements = [];
   }
 
@@ -37,15 +38,26 @@ export class MatrizComponent implements OnInit{
     
   }
 
+  updateFilas(event: Event): void {
+    const value = (event.target as HTMLInputElement).value;
+    this.filas = value ? parseInt(value, 10) : null;
+  }
+
+  updateColumnas(event: Event): void {
+    const value = (event.target as HTMLInputElement).value;
+    this.columnas = value ? parseInt(value, 10) : null;
+  }
+
   generarMatriz(): void {
     // Limpiar la matriz actual
     this.matriz = [];
 
     // Validar que se hayan ingresado valores válidos
-    if (this.filas <= 0 || this.columnas <= 0) {
-        console.error('Por favor, ingrese valores válidos para filas y columnas.');
-        return;
+    if (this.filas === null || this.columnas === null || this.filas <= 0 || this.columnas <= 0) {
+      console.error('Por favor, ingrese valores válidos para filas y columnas.');
+      return;
     }
+
 
     // Generar los nombres de las filas para los encabezados a la izquierda de la matriz
     this.nombresFilasIzquierda = Array.from(Array(this.filas).keys()).map(i => `A${i + 1}`);
@@ -104,10 +116,10 @@ export class MatrizComponent implements OnInit{
     this.http.post<any>('http://127.0.0.1:7500/topsis', data).subscribe(
     (response) => {
       console.log('Respuesta de la API:', response);
-      // Manejar la respuesta de la API aquí (por ejemplo, mostrarla en la interfaz de usuario)
       this.outputAPI = response.output;
-      // Formatear el output de la API como HTML seguro
       this.outputAPIHtml = this.sanitizer.bypassSecurityTrustHtml(this.outputAPI);
+      this.dataService.setData(this.outputAPI);  // Guardar los datos en el servicio
+      this.router.navigate(['/resultados']);  // Navegar a la página de resultados
     },
     (error) => {
       console.error('Error al realizar la solicitud:', error);
@@ -130,19 +142,6 @@ export class MatrizComponent implements OnInit{
   }
 
 
-
-
-
-  parseOutput(output: string): any[] {
-    // Dividir el output en secciones basadas en los saltos de línea
-    const sections = output.split('\n\n');
-  
-    // Iterar sobre cada sección y dividirla en líneas y columnas
-    return sections.map(section => {
-      const lines = section.split('\n');
-      return lines.map(line => line.split(/\s+/)); // Dividir cada línea en columnas por espacios
-    });
-  }
 
 }
 

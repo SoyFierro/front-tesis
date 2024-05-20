@@ -1,3 +1,4 @@
+/*Estos son los estilos del form donde estolumnas y filas*/
 .custom-input {
     width: 80px; /* Personaliza el ancho como desees */
     height: 30px; /* Personaliza la altura como desees */
@@ -15,11 +16,12 @@
     margin-left: auto; /* Centra horizontalmente */
     margin-right: auto; /* Centra horizontalmente */
 }
-.custom-navbar {
-    background-color: #cbe1f0; /* Cambia el color de fondo a azul */
-    padding: 1rem 0; /* Aumenta el relleno arriba y abajo del navbar */
-    font-size: 1.2rem; /* Aumenta el tamaño de la fuente */
-}
+
+
+
+
+
+/*Estos son los estilos para hacer cmbios de la tabla matriz*/
 .matriz-table {
     margin-top: -50px; /* Mueve la tabla hacia arriba */
 }
@@ -28,24 +30,31 @@
 
 
 
-.output-container {
-    display: flex;
-    justify-content: center;
+
+
+/*Aqui es para customizar el navbar a mis gusto*/
+.custom-navbar {
+    font-size: 1.25rem; /* Aumenta el tamaño de la fuente del navbar */
+    padding: -1rem 0.5rem; /* Aumenta el padding del navbar */
 }
-  
-.output-box {
-    border: 1px solid #ccc;
-    padding: 20px;
-    margin-top: 20px;
-    width: 100%; /* Cambiar el ancho del cuadro según sea necesario */
-    text-align: left; /* Alinear el texto a la izquierda */
+
+.custom-navbar .nav-link {
+    font-size: 1.5rem; /* Aumenta el tamaño de la fuente de los links */
+    padding: 0.5rem 1rem; /* Aumenta el padding de los links */
 }
-  
-.output-row {
-    display: flex;
-    justify-content: space-between;
+
+.custom-navbar .navbar-toggler {
+    font-size: 1.25rem; /* Aumenta el tamaño del texto del toggler */
+    padding: 0.75rem; /* Aumenta el padding del toggler */
 }
-  
-.output-row div {
-    margin-bottom: 5px;
+
+.custom-navbar .navbar-brand {
+    font-size: 1.5rem; /* Aumenta el tamaño del texto de la marca */
+}
+
+@media (min-width: 992px) {
+    .custom-navbar .navbar-nav .nav-link {
+        padding-right: 2rem; /* Ajusta el padding para pantallas grandes */
+        padding-left: 2rem;
+    }
 }
