@@ -9,7 +9,7 @@
 }
 
 .result-section {
-  margin-bottom: 400px; /* Este es para reducir el espacio entre cada sección de resultados */
+  margin-bottom: 900px; /* Este es para reducir el espacio entre cada sección de resultados */
 }
 
 .result-section h4 {
@@ -34,6 +34,42 @@
   font-family: 'Arial', sans-serif; /* Estilo de fuente de Bootstrap */
 }
 
+
+.progress-line {
+  position: absolute;
+  height: 2px; /* Grosor de la línea de progreso */
+  background-color: #007bff; /* Color de la línea de progreso */
+  bottom: 15px; /* Ajuste vertical */
+  left: 15px; /* Ajuste horizontal */
+  transition: width 0.3s ease; /* Animación de la longitud de la línea */
+}
+
+.step-progress {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 60px;
+  align-items: center; /* Alineación vertical */
+  justify-content: center; /* Alineación horizontal */
+}
+
+.step {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #007bff;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.step.active {
+  background-color: #0056b3; /* Color activo */
+}
 
 
 

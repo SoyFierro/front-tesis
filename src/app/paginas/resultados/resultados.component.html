@@ -22,13 +22,20 @@
 
 <div *ngIf="outputAPI" class="output-container">
   <div class="output-box">
-    <div class="result-section" *ngFor="let section of parseOutput(outputAPI)">
+    <div class="result-section" *ngFor="let section of parseOutput(outputAPI); let i = index">
       <h4>{{ section[0] }}</h4> <!-- El primer elemento de cada sección es el encabezado -->
-      <table class="result-table">
+      <table class="result-table" [id]="'section-' + i">  <!-- El id selecciona hasta el ultimo resultado de las 6 tablas para mostrar directamente el ultimo -->
         <tr *ngFor="let item of section.slice(1)">
           <td *ngFor="let cell of item.split('\t')">{{ cell }}</td>
         </tr>
       </table>
     </div>
   </div>
+</div>
+
+<div class="step-progress">
+  <div class="step" *ngFor="let step of steps; let i = index" (click)="scrollToSection(i)" [ngClass]="{ 'active': currentStep === i }">
+    {{ i + 1 }}
+  </div>
+  <div class="progress-line"></div> <!-- Esta es la línea de progreso -->
 </div>
