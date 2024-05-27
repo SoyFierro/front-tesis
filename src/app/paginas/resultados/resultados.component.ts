@@ -1,27 +1,25 @@
-import { Component, OnInit, AfterViewInit} from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { DataService } from '../servicios/data.service';
-import { Chart, ChartType, ChartConfiguration, ChartItem  } from 'chart.js/auto';
-
 
 @Component({
   selector: 'app-resultados',
   templateUrl: './resultados.component.html',
-  styleUrl: './resultados.component.css'
+  styleUrls: ['./resultados.component.css']
 })
-export class ResultadosComponent  implements OnInit, AfterViewInit{
+export class ResultadosComponent implements OnInit, AfterViewInit {
   outputAPI: string = '';
-  steps = ['Datos sin procesar', 'Datos Normalizados', 'Datos Ponderados', 'Soluciones ideales positivas y negativas', 'Medidas de separación', 'Orden Clasificado']
+  parsedOutput: any[] = [];
+  steps = ['Datos sin procesar', 'Datos Normalizados', 'Datos Ponderados', 'Soluciones ideales positivas y negativas', 'Medidas de separación', 'Orden Clasificado'];
   currentStep: number = 0; // Variable para almacenar el índice del paso actual
 
   constructor(private dataService: DataService) {}
 
   ngOnInit(): void {
     this.outputAPI = this.dataService.getData();
-    
+    this.parsedOutput = this.parseOutput(this.outputAPI);
   }
 
   ngAfterViewInit(): void {
-    // Asegúrate de que `outputAPI` no esté vacío antes de llamar a `scrollToLastSection`
     if (this.outputAPI) {
       setTimeout(() => {
         this.scrollToLastSection();
@@ -31,7 +29,7 @@ export class ResultadosComponent  implements OnInit, AfterViewInit{
 
   parseOutput(output: string): any[] {
     if (!output) {
-      return []; // Si no hay output, retorna un arreglo vacío
+      return [];
     }
 
     const sections = output.split('\n\n');
@@ -44,7 +42,7 @@ export class ResultadosComponent  implements OnInit, AfterViewInit{
 
   formatLine(line: string): string {
     if (!line) {
-      return ''; // Si la línea es indefinida o vacía, retorna una cadena vacía
+      return '';
     }
 
     if (line.includes(':')) {
@@ -56,12 +54,6 @@ export class ResultadosComponent  implements OnInit, AfterViewInit{
     }
   }
 
-  formatSpecialLine(line: string): string {
-    // Reemplazar múltiples espacios con uno solo
-    return line.replace(/\s+/g, '     ');
-  }
-
-  //Este para modificar agregar el stepp progres
   scrollToSection(index: number): void {
     this.currentStep = index; // Actualiza el paso actual al hacer clic
     const sectionId = `section-${index}`;
@@ -71,20 +63,19 @@ export class ResultadosComponent  implements OnInit, AfterViewInit{
     }
   }
 
-
-
-  //Esta funcion es para mostrar al ultima tabla una ves entrando a la pagina
   scrollToLastSection(): void {
-    const lastSectionId = `section-${this.parseOutput(this.outputAPI).length - 1}`;
+    const lastSectionId = `section-${this.parsedOutput.length - 1}`;
     const lastSectionElement = document.getElementById(lastSectionId);
     if (lastSectionElement) {
       lastSectionElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   }
 
-   
 
-
+  //Meotodo para optimizar la pantalla de resultados
+  trackByFn(index: number, item: any): number {
+    return index; // O cualquier identificador único para el elemento
+  }
 }
 
 

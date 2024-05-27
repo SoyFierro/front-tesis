@@ -23,16 +23,16 @@
 
 <div *ngIf="outputAPI" class="output-container">
   <div class="output-box">
-    <div class="result-section" *ngFor="let section of parseOutput(outputAPI); let i = index">
+    <div class="result-section" *ngFor="let section of parsedOutput; let i = index; trackBy: trackByFn">
       <h4>{{ section[0] }}</h4> <!-- El primer elemento de cada sección es el encabezado -->
-      <div *ngIf="i === (parseOutput(outputAPI).length - 1)" class="form-background">
+      <div *ngIf="i === (parsedOutput.length - 1)" class="form-background">
         <table class="result-table" [id]="'section-' + i">
           <tr *ngFor="let item of section.slice(1)">
             <td *ngFor="let cell of item.split('\t')">{{ cell }}</td>
           </tr>
         </table>
       </div>
-      <table *ngIf="i !== (parseOutput(outputAPI).length - 1)" class="result-table" [id]="'section-' + i">
+      <table *ngIf="i !== (parsedOutput.length - 1)" class="result-table" [id]="'section-' + i">
         <tr *ngFor="let item of section.slice(1)">
           <td *ngFor="let cell of item.split('\t')">{{ cell }}</td>
         </tr>
