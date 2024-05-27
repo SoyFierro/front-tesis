@@ -5,17 +5,31 @@
     font-size: 12px; /* Personaliza el tamaño de la fuente como desees */
 }
 .form-container {
-    background-color: white;
+    background-color: rgb(241, 239, 239);
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     position: relative; /* Cambiado a relative */
-    left: 600px; /* Mueve el contenedor px a la derecha */
+    left: -700px; /* Mueve el contenedor px a la derecha */
     top: -70px;
     width: 400px; /* Ancho fijo */
+    height: 650px; /* Alargar hacia abajo */
     margin-left: auto; /* Centra horizontalmente */
     margin-right: auto; /* Centra horizontalmente */
 }
+
+.form-container h2{
+    margin-left: 80px;
+    font-size: 1.8rem; /* Ajusta el tamaño de la fuente para hacerla más pequeña */
+}
+
+.form-container h3{
+    margin-top: 70px;
+    margin-left: 55px;
+    font-size: 1.8rem; /* Ajusta el tamaño de la fuente para hacerla más pequeña */
+}
+
+
 
 
 
@@ -23,7 +37,8 @@
 
 /*Estos son los estilos para hacer cmbios de la tabla matriz*/
 .matriz-table {
-    margin-top: -50px; /* Mueve la tabla hacia arriba */
+    margin-top: -650px; /* Mueve la tabla hacia arriba */
+    margin-left: -4px; /* Ajusta este valor para mover la tabla hacia la derecha */
 }
 
 
@@ -35,7 +50,7 @@
 /*Aqui es para customizar el navbar a mis gusto*/
 .custom-navbar {
     font-size: 1.25rem; /* Aumenta el tamaño de la fuente del navbar */
-    padding: -1rem 0.5rem; /* Aumenta el padding del navbar */
+    padding: 1rem 0.10rem; /* Aumenta el padding del navbar */
 }
 
 .custom-navbar .nav-link {
@@ -58,3 +73,64 @@
         padding-left: 2rem;
     }
 }
+
+
+
+
+/* Estos es para los botones dentro del form */
+.button-container {
+    margin-top: 20px; /* Ajusta este valor para mover todo el contenedor de botones hacia abajo */
+    text-align: center; /* Centra el contenido horizontalmente */
+}
+
+.button-container h2 {
+    margin-left: -20px;
+    margin-top: 60px;
+    margin-bottom: -15px; /* Ajusta el espacio debajo del título */
+    font-size: 1.8rem; /* Ajusta el tamaño de la fuente para hacerla más pequeña */
+}
+
+
+/* Botones de Agregar fila y columna*/
+.button-container .btn {
+    margin: 0 10px; /* Ajusta el espacio horizontal entre los botones */
+    padding: 5px 10px; /* Ajusta el padding para hacer los botones más pequeños */
+    font-size: 0.9rem; /* Ajusta el tamaño de la fuente de los botones */
+    display: inline-block; /* Asegura que los botones estén en la misma línea */
+    margin-top: 30px;
+}
+
+
+
+
+
+
+/* Aqui es para cumstomizar los el input y el boton y el icono de excel*/
+.import-export-buttons input[type="file"] {
+    /* Estilos para el input de tipo archivo */
+    /* Por ejemplo: */
+    /*display: none; /* Para ocultar el input */
+
+    margin-top: 20px;
+    margin-left: 10px; 
+}
+
+.import-export-buttons button {
+    /* Estilos para el botón */
+    /* Por ejemplo: */
+    
+    color: #fff; /* Color del texto blanco */
+    padding: 8px 16px; /* Espaciado interno */
+    border: none; /* Sin borde */
+    border-radius: 4px; /* Borde redondeado */
+    cursor: pointer; /* Cursor de flecha */
+    margin-left: 10px; /* Espacio entre el input y el botón */
+    margin-top: 70px;
+}
+
+.excel-icon {
+    width: 60px; /* Define el ancho de la imagen */
+    height: auto; /* Permite que la altura se ajuste automáticamente según el ancho */
+    margin-top: 50px;
+}
+  

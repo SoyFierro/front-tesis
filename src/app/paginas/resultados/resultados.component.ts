@@ -1,5 +1,7 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit} from '@angular/core';
 import { DataService } from '../servicios/data.service';
+import { Chart, ChartType, ChartConfiguration, ChartItem  } from 'chart.js/auto';
+
 
 @Component({
   selector: 'app-resultados',
@@ -7,7 +9,6 @@ import { DataService } from '../servicios/data.service';
   styleUrl: './resultados.component.css'
 })
 export class ResultadosComponent  implements OnInit, AfterViewInit{
-
   outputAPI: string = '';
   steps = ['Datos sin procesar', 'Datos Normalizados', 'Datos Ponderados', 'Soluciones ideales positivas y negativas', 'Medidas de separación', 'Orden Clasificado']
   currentStep: number = 0; // Variable para almacenar el índice del paso actual
@@ -16,6 +17,7 @@ export class ResultadosComponent  implements OnInit, AfterViewInit{
 
   ngOnInit(): void {
     this.outputAPI = this.dataService.getData();
+    
   }
 
   ngAfterViewInit(): void {
@@ -80,4 +82,10 @@ export class ResultadosComponent  implements OnInit, AfterViewInit{
     }
   }
 
+   
+
+
 }
+
+
+

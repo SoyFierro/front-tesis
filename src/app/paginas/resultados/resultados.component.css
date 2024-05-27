@@ -92,7 +92,7 @@
 
 .custom-navbar {
   font-size: 1.25rem; /* Aumenta el tamaño de la fuente del navbar */
-  padding: -1rem 0.5rem; /* Aumenta el padding del navbar */
+  padding: 1rem 0.5rem; /* Aumenta el padding del navbar */
 }
 
 .custom-navbar .nav-link {
@@ -115,6 +115,59 @@
       padding-left: 2rem;
   }
 }
+
+
+
+
+
+
+
+
+/* Estilo para el fondo del formulario de Orden Clasificado */
+.form-background {
+  background-color: white;
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;  /* Añadir margen superior para separar del contenido anterior */
+}
+
+.form-background .result-table {
+  margin-top: 10px;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.form-background .result-table th, 
+.form-background .result-table td {
+  padding: 8px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+.form-background .result-table th {
+  background-color: #f2f2f2;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

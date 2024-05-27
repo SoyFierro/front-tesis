@@ -8,12 +8,14 @@ import { HttpClient, HttpClientModule, provideHttpClient, withFetch } from '@ang
 import { MatrizComponent } from './paginas/matriz/matriz.component';
 import { CommonModule } from '@angular/common';
 import { ResultadosComponent } from './paginas/resultados/resultados.component';
+import { GraficaComponent } from './components/paginas/grafica/grafica.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MatrizComponent,
-    ResultadosComponent
+    ResultadosComponent,
+    GraficaComponent
   ],
   imports: [
     BrowserModule,
