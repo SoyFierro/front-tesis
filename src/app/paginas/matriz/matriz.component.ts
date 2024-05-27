@@ -146,7 +146,7 @@ export class MatrizComponent implements OnInit{
   
 
     // Realizar la solicitud POST a la API
-    this.http.post<any>('https://zld94km8-8000.usw3.devtunnels.ms/topsis', data).subscribe(
+    this.http.post<any>('https://46n4m93t-8000.usw3.devtunnels.ms/topsis', data).subscribe(
     (response) => {
       console.log('Respuesta de la API:', response);
       this.outputAPI = response.output;
