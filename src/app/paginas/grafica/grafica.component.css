@@ -1,0 +1,48 @@
+.custom-navbar {
+    font-size: 1.25rem; /* Aumenta el tamaño de la fuente del navbar */
+    padding: 1rem 0.5rem; /* Aumenta el padding del navbar */
+}
+  
+.custom-navbar .nav-link {
+  font-size: 1.5rem; /* Aumenta el tamaño de la fuente de los links */
+  padding: 0.5rem 1rem; /* Aumenta el padding de los links */
+}
+  
+.custom-navbar .navbar-toggler {
+   font-size: 1.25rem; /* Aumenta el tamaño del texto del toggler */
+  padding: 0.75rem; /* Aumenta el padding del toggler */
+}
+  
+.custom-navbar .navbar-brand {
+  font-size: 1.5rem; /* Aumenta el tamaño del texto de la marca */
+}
+  
+@media (min-width: 992px) {
+  .custom-navbar .navbar-nav .nav-link {
+    padding-right: 2rem; /* Ajusta el padding para pantallas grandes */
+    padding-left: 2rem;
+  }
+}
+
+
+
+
+
+
+.graph-form {
+  background-color: white;
+  padding: 20px 20px 10px 20px; /* Ajusta el relleno según sea necesario */
+  border-radius: 10px; /* Ajusta el radio de borde según sea necesario */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  max-width: 950px; /*Este es para a largar horizontalmente hacia la derecha*/
+  margin: 30px auto 0 auto;
+}
+
+/* Estilo para el contenedor del gráfico */
+#chart-container {
+  width: 100%; /* Ajusta el ancho del gráfico */
+  max-width: 700px; /* Establece un ancho máximo para el gráfico */
+  height: auto; /* Mantén la altura que deseas */
+  margin: 0 auto; /* Centra el gráfico horizontalmente */
+  position: relative;
+}

@@ -1,0 +1,180 @@
+h1 {
+    text-align: center; /* Centra el texto horizontalmente */
+    font-size: 2.0rem; /* Ajusta el tamaño de la fuente como desees */
+    margin: 20px 0; /* Añade margen superior e inferior para más espacio */
+}
+
+.btn-realizar {
+    margin-left: 30px; /* Ajusta este valor para mover el botón más a la derecha */
+}
+
+
+
+
+/* Estos son los estilos del form donde se crean columnas y filas */
+.custom-input {
+    width: 80px; /* Personaliza el ancho como desees */
+    height: 30px; /* Personaliza la altura como desees */
+    font-size: 12px; /* Personaliza el tamaño de la fuente como desees */
+}
+
+.form-container {
+    background-color: rgb(241, 239, 239);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    margin-left: -400px;
+    margin-right: auto;
+}
+
+.form-container h2 {
+    margin-left: 80px;
+    font-size: 1.8rem; /* Ajusta el tamaño de la fuente para hacerla más pequeña */
+}
+
+.form-container h3 {
+    margin-top: 70px;
+    margin-left: 55px;
+    font-size: 1.8rem; /* Ajusta el tamaño de la fuente para hacerla más pequeña */
+}
+
+/* Estilos para la tabla matriz */
+.matriz-table {
+    margin-top: -650px; /* Ajusta el margen superior para pantallas grandes y medianas */
+    width: 100%; /* Ocupa el 100% del ancho */
+    overflow-x: auto; /* Permite el desplazamiento horizontal si es necesario */
+    margin-left: 30px; /* Ajusta el margen izquierdo */
+}
+
+/* Estilos del navbar */
+.custom-navbar {
+    font-size: 1.25rem; /* Aumenta el tamaño de la fuente del navbar */
+    padding: 1rem 0.10rem; /* Aumenta el padding del navbar */
+}
+
+.custom-navbar .nav-link {
+    font-size: 1.5rem; /* Aumenta el tamaño de la fuente de los links */
+    padding: 0.5rem 1rem; /* Aumenta el padding de los links */
+}
+
+.custom-navbar .navbar-toggler {
+    font-size: 1.25rem; /* Aumenta el tamaño del texto del toggler */
+    padding: 0.75rem; /* Aumenta el padding del toggler */
+}
+
+.custom-navbar .navbar-brand {
+    font-size: 1.5rem; /* Aumenta el tamaño del texto de la marca */
+}
+
+@media (min-width: 992px) {
+    .custom-navbar .navbar-nav .nav-link {
+        padding-right: 2rem; /* Ajusta el padding para pantallas grandes */
+        padding-left: 2rem;
+    }
+}
+
+/* Estilos para los botones dentro del form */
+.button-container {
+    margin-top: 20px; /* Ajusta este valor para mover todo el contenedor de botones hacia abajo */
+    text-align: center; /* Centra el contenido horizontalmente */
+}
+
+.button-container h2 {
+    margin-left: -20px;
+    margin-top: 60px;
+    margin-bottom: -15px; /* Ajusta el espacio debajo del título */
+    font-size: 1.8rem; /* Ajusta el tamaño de la fuente para hacerla más pequeña */
+}
+
+.button-container .btn {
+    margin: 0 10px; /* Ajusta el espacio horizontal entre los botones */
+    padding: 5px 10px; /* Ajusta el padding para hacer los botones más pequeños */
+    font-size: 0.9rem; /* Ajusta el tamaño de la fuente de los botones */
+    display: inline-block; /* Asegura que los botones estén en la misma línea */
+    margin-top: 30px;
+}
+
+/* Estilos para customizar el input y el botón y el icono de Excel */
+.import-export-buttons input[type="file"] {
+    margin-top: 20px;
+    margin-left: 10px; 
+}
+
+.import-export-buttons button {
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 10px;
+    margin-top: 70px;
+}
+
+.excel-icon {
+    width: 60px;
+    height: auto;
+    margin-top: 50px;
+}
+
+/* Estilos responsivos para pantallas pequeñas */
+@media (max-width: 768px) {
+    /* Ajusta el formulario */
+    .form-container {
+        width: 100%; /* Ocupa el 100% del ancho en pantallas pequeñas */
+        left: 0; /* Elimina el desplazamiento horizontal */
+        top: 0; /* Elimina el desplazamiento vertical */
+        margin: 0 auto; /* Centra horizontalmente */
+        height: auto; /* Deja que la altura se ajuste automáticamente */
+        padding: 10px;
+    }
+
+    /* Ajusta el margen de la matriz para pantallas pequeñas */
+    .matriz-table {
+        margin-top: 20px; /* Ajusta el margen superior para que esté por debajo del formulario */
+    }
+
+    /* Ajusta los botones de importar/exportar */
+    .import-export-buttons {
+        display: flex;
+        flex-direction: column; /* Coloca los botones en una columna */
+        align-items: center; /* Centra los botones horizontalmente */
+    }
+
+    .import-export-buttons input[type="file"],
+    .import-export-buttons button {
+        width: 100%; /* Ocupa el 100% del ancho en pantallas pequeñas */
+        margin-top: 10px; /* Añade margen entre los elementos */
+    }
+}
+
+/* Estilos responsivos para pantallas medianas y grandes */
+@media (min-width: 768px) and (max-width: 1199px) {
+    .form-container {
+        width: 80%; /* Ocupa el 80% del ancho en pantallas medianas */
+        height: auto; /* Deja que la altura se ajuste automáticamente */
+        padding: 20px;
+    }
+
+    .matriz-table {
+        width: 100%; /* Ocupa el 100% del ancho */
+    }
+
+    .button-container .btn {
+        font-size: 1rem; /* Aumenta el tamaño de la fuente de los botones */
+    }
+}
+
+@media (min-width: 1200px) {
+    .form-container {
+        width: 60%; /* Ancho del 60% en pantallas grandes */
+    }
+
+    .button-container .btn {
+        font-size: 1.1rem; /* Aumenta el tamaño de la fuente de los botones */
+    }
+
+    .custom-navbar {
+        font-size: 1.5rem; /* Aumenta el tamaño de la fuente del navbar */
+    }
+}

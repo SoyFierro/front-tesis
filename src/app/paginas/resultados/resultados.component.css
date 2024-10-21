@@ -1,0 +1,176 @@
+.output-container {
+  display: flex;
+  justify-content: center;
+}
+
+.output-box {
+  width: 70%; /* Aqui Ajusta el ancho para permitir expansion */
+  margin-top: 20px;
+}
+
+.result-section {
+  margin-bottom: 900px; /* Este es para reducir el espacio entre cada sección de resultados */
+}
+
+.result-section h4 {
+  background-color: #f2f2f2;
+  padding: 10px;
+}
+
+.result-table {
+  width: 100%; /* Permite que la tabla ocupe el ancho completo del contenedor */
+  border-collapse: collapse; /* Colapsa los bordes para una mejor presentacion */
+}
+
+.result-table td {
+  padding: 5px 10px; /* Espaciado interno para celdas */
+  border: 1px solid #ddd; /* Borde para celdas */
+  text-align: left; /* Alineacion de texto a la izquierda */
+}
+
+.result-item {
+  margin-bottom: 5px;
+  font-size: 1rem; /* Tamaño de fuente mas grande  */
+  font-family: 'Arial', sans-serif; /* Estilo de fuente de Bootstrap*/
+}
+
+
+.progress-line {
+  position: absolute;
+  height: 2px; /* Grosor de la línea de progreso */
+  background-color: #007bff; /* Color de la linea de progreso */
+  bottom: 15px; /* Ajuste vertical */
+  left: 15px; /* Ajuste horizontal */
+  transition: width 0.3s ease; /* Este para la Animacion de la longitud de la linea */
+}
+
+.step-progress {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 60px;
+  align-items: center; /* Alineacion vertical */
+  justify-content: center; /* Alineacion horizontal */
+}
+
+.step {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #007bff;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.step.active {
+  background-color: #0056b3; /* Color activo */
+}
+
+
+
+
+/* Estilos para la barra de nevagcion y el navbar 
+.custom-navbar .nav-link {
+  color: #000000;
+  font-size: 1.2rem;
+}
+
+.custom-navbar .nav-link:hover {
+  color: #bcb8b8;
+}
+*/
+
+
+
+/* Estilos del navbar */
+.custom-navbar {
+  font-size: 1.25rem; /* Aumenta el tamaño de la fuente del navbar */
+  padding: 1rem 0.10rem; /* Aumenta el padding del navbar */
+}
+
+.custom-navbar .nav-link {
+  font-size: 1.5rem; /* Aumenta el tamaño de la fuente de los links */
+  padding: 0.5rem 1rem; /* Aumenta el padding de los links */
+}
+
+.custom-navbar .navbar-toggler {
+  font-size: 1.25rem; /* Aumenta el tamaño del texto del toggler */
+  padding: 0.75rem; /* Aumenta el padding del toggler */
+}
+
+.custom-navbar .navbar-brand {
+  font-size: 1.5rem; /* Aumenta el tamaño del texto de la marca */
+}
+
+@media (min-width: 992px) {
+  .custom-navbar .navbar-nav .nav-link {
+      padding-right: 2rem; /* Ajusta el padding para pantallas grandes */
+      padding-left: 2rem;
+  }
+}
+
+
+
+
+
+
+/* Estilo para el fondo del formulario de Orden Clasificado */
+.form-background {
+  background-color: white;
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;  /* Añadir margen superior para separar del contenido anterior */
+}
+
+.form-background .result-table {
+  margin-top: 10px;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.form-background .result-table th, 
+.form-background .result-table td {
+  padding: 8px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+.form-background .result-table th {
+  background-color: #f2f2f2;
+}
+
+.form-background button {
+  margin-top: 20px; /* Mover el botón hacia abajo */
+  margin-right: 200px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
