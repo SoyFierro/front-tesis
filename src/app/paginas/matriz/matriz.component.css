@@ -8,12 +8,36 @@ h1 {
     margin-left: 30px; /* Ajusta este valor para mover el botón más a la derecha */
 }
 
+.btn-csv {
+    position: absolute; /* Posicionamiento absoluto */
+    top: 20px; /* Ajusta la distancia desde la parte superior de la página */
+    left: 70px;
+    padding: 5px 5px;
+    font-size: 0.8rem;
+    z-index: 1000; /* Asegúrate de que esté encima del navbar */
+}
+
+.excel-icon1 {
+    position: absolute; /* Posicionamiento absoluto */
+    top: 10px; /* Ajusta la distancia desde la parte superior de la página */
+    
+    width: 45px;
+    height: auto;
+    z-index: 1000; /* Asegúrate de que esté encima del navbar */
+    left: 20px;
+}
 
 
 
-/* Estos son los estilos del form donde se crean columnas y filas */
+/* Estos son los estilos de los inputs donde se crean columnas y filas */
 .custom-input {
-    width: 80px; /* Personaliza el ancho como desees */
+    width: 100px; /* Personaliza el ancho como desees */
+    height: 30px; /* Personaliza la altura como desees */
+    font-size: 12px; /* Personaliza el tamaño de la fuente como desees */
+}
+
+.custom-input-valor {
+    width: 100px; /* Personaliza el ancho como desees */
     height: 30px; /* Personaliza la altura como desees */
     font-size: 12px; /* Personaliza el tamaño de la fuente como desees */
 }
@@ -24,7 +48,7 @@ h1 {
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     position: relative;
-    margin-left: -400px;
+    margin-left: -500px;  /*  Lo cambiare a -500 */
     margin-right: auto;
 }
 
@@ -34,14 +58,20 @@ h1 {
 }
 
 .form-container h3 {
-    margin-top: 70px;
+    margin-top: 50px;
+    margin-left: 55px;
+    font-size: 1.8rem; /* Ajusta el tamaño de la fuente para hacerla más pequeña */
+}
+
+.form-container h4 {
+    margin-top: 30px;
     margin-left: 55px;
     font-size: 1.8rem; /* Ajusta el tamaño de la fuente para hacerla más pequeña */
 }
 
 /* Estilos para la tabla matriz */
 .matriz-table {
-    margin-top: -650px; /* Ajusta el margen superior para pantallas grandes y medianas */
+    margin-top: -700px; /* Ajusta el margen superior para pantallas grandes y medianas */
     width: 100%; /* Ocupa el 100% del ancho */
     overflow-x: auto; /* Permite el desplazamiento horizontal si es necesario */
     margin-left: 30px; /* Ajusta el margen izquierdo */
@@ -53,16 +83,24 @@ h1 {
     padding: 1rem 0.10rem; /* Aumenta el padding del navbar */
 }
 
-.custom-navbar .nav-link {
-    font-size: 1.5rem; /* Aumenta el tamaño de la fuente de los links */
-    padding: 0.5rem 1rem; /* Aumenta el padding de los links */
+
+
+
+
+
+
+/* Estilo hover de los links del navbar */
+.custom-navbar .nav-link:hover {
+    color: #cfdcd2; /* Cambia el color del texto al hacer hover (color naranja, por ejemplo) */
 }
 
+/* Estilo para el toggler */
 .custom-navbar .navbar-toggler {
     font-size: 1.25rem; /* Aumenta el tamaño del texto del toggler */
     padding: 0.75rem; /* Aumenta el padding del toggler */
 }
 
+/* Estilo para la marca del navbar */
 .custom-navbar .navbar-brand {
     font-size: 1.5rem; /* Aumenta el tamaño del texto de la marca */
 }
@@ -108,14 +146,17 @@ h1 {
     border-radius: 4px;
     cursor: pointer;
     margin-left: 10px;
-    margin-top: 70px;
+    margin-top: 10px;
 }
 
 .excel-icon {
     width: 60px;
     height: auto;
-    margin-top: 50px;
+    margin-top: -5px;
+    margin-left: 50px;
 }
+
+
 
 /* Estilos responsivos para pantallas pequeñas */
 @media (max-width: 768px) {
@@ -178,3 +219,38 @@ h1 {
         font-size: 1.5rem; /* Aumenta el tamaño de la fuente del navbar */
     }
 }
+
+
+#errorToast {
+    background-color: #f8d7da; /* Fondo rojo claro */
+    color: #721c24; /* Texto rojo oscuro */
+    border: 1px solid #f5c6cb; /* Borde rojo */
+    border-radius: 8px; /* Bordes redondeados */
+    padding: 16px; /* Espaciado interior */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Sombra */
+    position: fixed; /* Mantenerlo fijo en la pantalla */
+    bottom: 20px; /* Separación desde la parte inferior */
+    right: -350px; /* Inicialmente fuera de la pantalla */
+    max-width: 500px; /* Ancho máximo del toast */
+    z-index: 1050; /* Asegurar que esté por encima de otros elementos */
+    opacity: 0; /* Inicialmente invisible */
+    transition: opacity 0.3s ease-in-out; /* Transición suave de opacidad */
+}
+  
+#errorToast.show {
+    animation: slide-in 0.5s forwards; /* Animación de entrada */
+    opacity: 1; /* Visibilidad cuando tiene la clase 'show' */
+}
+  
+/* Definir la animación */
+@keyframes slide-in {
+    from {
+      right: -350px; /* Iniciar fuera de la pantalla */
+      opacity: 0; /* Opacidad inicial */
+    }
+    to {
+      right: 20px; /* Posición final */
+      opacity: 1; /* Aparecer visiblemente */
+    }
+}
+  

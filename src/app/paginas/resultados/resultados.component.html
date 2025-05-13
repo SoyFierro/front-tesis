@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg custom-navbar" style="background-color: #cbe1f0; color: #ffffff;">
+<nav class="navbar navbar-expand-lg custom-navbar" style="background-color: #f8f9fa; color: #ffffff;">
   <div class="container-fluid">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -7,7 +7,7 @@
       <div class="collapse navbar-collapse justify-content-center text-center" id="navbarSupportedContent">
           <ul class="navbar-nav mb-2 mb-lg-0">
               <li class="nav-item">
-                  <a class="nav-link">Inicio</a>
+                  <!-- <a class="nav-link">Inicio</a> -->
               </li>
               <li class="nav-item">
                   <a class="nav-link" routerLink="/matriz">Matriz</a>
@@ -32,7 +32,7 @@
           </tr>
         </table>
         <!-- Botón "Ver Gráfico" -->
-        <button class="btn btn-primary" [routerLink]="['/grafica']">Ver Grafico</button>
+        <button class="btn btn-primary" [routerLink]="['/grafica']">Ver Grafico de resultados</button>
       </div>
       <table *ngIf="i !== (parsedOutput.length - 1)" class="result-table" [id]="'section-' + i">
         <tr *ngFor="let item of section.slice(1)">

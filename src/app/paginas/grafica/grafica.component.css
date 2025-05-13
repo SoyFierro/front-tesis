@@ -1,18 +1,29 @@
+/* Estilos del navbar */
 .custom-navbar {
-    font-size: 1.25rem; /* Aumenta el tamaño de la fuente del navbar */
-    padding: 1rem 0.5rem; /* Aumenta el padding del navbar */
+  font-size: 1.25rem; /* Aumenta el tamaño de la fuente del navbar */
+  padding: 1rem 0.10rem; /* Aumenta el padding del navbar */
 }
-  
+
+/* Estilo normal de los links del navbar */
 .custom-navbar .nav-link {
   font-size: 1.5rem; /* Aumenta el tamaño de la fuente de los links */
   padding: 0.5rem 1rem; /* Aumenta el padding de los links */
+  color: #000000; /* Cambia el color del texto de los links (color negro por ejemplo) */
+  text-decoration: none; /* Evita el subrayado de los links */
 }
-  
+
+/* Estilo hover de los links del navbar */
+.custom-navbar .nav-link:hover {
+  color: #cfdcd2; /* Cambia el color del texto al hacer hover (color naranja, por ejemplo) */
+}
+
+/* Estilo para el toggler */
 .custom-navbar .navbar-toggler {
-   font-size: 1.25rem; /* Aumenta el tamaño del texto del toggler */
+  font-size: 1.25rem; /* Aumenta el tamaño del texto del toggler */
   padding: 0.75rem; /* Aumenta el padding del toggler */
 }
-  
+
+/* Estilo para la marca del navbar */
 .custom-navbar .navbar-brand {
   font-size: 1.5rem; /* Aumenta el tamaño del texto de la marca */
 }
@@ -25,6 +36,14 @@
 }
 
 
+
+
+h1 {
+  text-align: center; /* Centra el texto horizontalmente */
+  font-size: 2.0rem; /* Ajusta el tamaño de la fuente como desees */
+  margin: 40px 0; /* Añade margen superior e inferior para más espacio */
+
+}
 
 
 
@@ -41,7 +60,7 @@
 /* Estilo para el contenedor del gráfico */
 #chart-container {
   width: 100%; /* Ajusta el ancho del gráfico */
-  max-width: 700px; /* Establece un ancho máximo para el gráfico */
+  max-width: 800px; /* Establece un ancho máximo para el gráfico */
   height: auto; /* Mantén la altura que deseas */
   margin: 0 auto; /* Centra el gráfico horizontalmente */
   position: relative;

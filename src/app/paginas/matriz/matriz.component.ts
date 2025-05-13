@@ -119,8 +119,30 @@ export class MatrizComponent implements OnInit{
     this.guardarEstado();
   }
 
+  eliminarMatriz(): void {
+    // Limpiar los valores de la matriz, filas y columnas
+    this.matriz = [];
+    this.filas = null;
+    this.columnas = null;
+    this.nombresFilasIzquierda = [];
+    this.nombresFilasSuperior = [];
+    this.columnasArray = [];
+    this.pesos = [];
+  
+    // Guardar el estado vacío
+    this.guardarEstado();
+  }
+  
+
   
   realizarCalculoTopsis(): void {
+
+    // Verificar si la matriz ha sido generada
+    if (this.matriz.length === 0) {
+      this.mostrarToastError('Error: Genera la matriz antes de realizar el cálculo.');
+      return;
+    }
+
     // Extraer solo los valores numéricos de la matriz
     const raw_data = this.matriz.map(row => row.map(cell => cell.value));
     // Construir el objeto JSON con los datos recolectados
@@ -146,7 +168,7 @@ export class MatrizComponent implements OnInit{
   
 
     // Realizar la solicitud POST a la API
-    this.http.post<any>('http://127.0.0.1:8000/topsis', data).subscribe(
+    this.http.post<any>('http://localhost:8000/topsis', data).subscribe(
     (response) => {
       console.log('Respuesta de la API:', response);
       this.outputAPI = response.result;
@@ -165,6 +187,33 @@ export class MatrizComponent implements OnInit{
     }
   );
   }
+
+  mostrarToastError(mensaje: string): void {
+    const toastElement = document.getElementById('errorToast');
+    if (toastElement) {
+      const toastBody = toastElement.querySelector('.toast-body');
+      if (toastBody) {
+        toastBody.textContent = mensaje;
+      }
+  
+      // Agregamos la clase 'show' para mostrar el toast
+      toastElement.classList.add('show');
+  
+      // Ocultar el toast al hacer clic en la "X"
+      const closeButton = toastElement.querySelector('.btn-close');
+      if (closeButton) {
+        closeButton.addEventListener('click', () => {
+          toastElement.classList.remove('show');
+        });
+      }
+  
+      // O también puedes ocultar el toast automáticamente después de unos segundos
+      setTimeout(() => {
+        toastElement.classList.remove('show');
+      }, 3000); // 5000ms = 5 segundos
+    }
+  }
+  
 
   actualizarValor(event: Event, cell: Cell): void {
     const valor = (event.target as HTMLInputElement).value;
@@ -293,6 +342,9 @@ export class MatrizComponent implements OnInit{
       console.log('No se pueden eliminar más columnas.');
     }
   }
+
+  
+  
 
 
 

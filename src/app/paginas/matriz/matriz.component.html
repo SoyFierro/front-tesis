@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg custom-navbar" style="background-color: #cbe1f0; color: #ffffff;">
+<nav class="navbar navbar-expand-lg custom-navbar" style="background-color: #bbcfe1; color: #ffffff;">
   <div class="container-fluid">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -6,19 +6,35 @@
 
     <div class="collapse navbar-collapse justify-content-center text-center" id="navbarSupportedContent">
       <ul class="navbar-nav mb-2 mb-lg-0">
+
         <li class="nav-item">
-          <a class="nav-link">Inicio</a>
+          <a class="nav-link" routerLink="">Inicio</a>
         </li>
+        
         <li class="nav-item">
           <a class="nav-link" routerLink="/matriz">Matriz</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" routerLink="/resultados">Resultados</a>
         </li>
+
+        
       </ul>
     </div>
   </div>
 </nav>
+
+
+<!-- Toast de error -->
+<div id="errorToast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true">
+  <div class="toast-header">
+    <strong class="me-auto">Error</strong>
+    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+  </div>
+  <div class="toast-body">
+    Error: Genera la matriz antes de realizar al calculo
+  </div>
+</div>
 
 
 
@@ -36,12 +52,12 @@
         <h2>Generar Matriz</h2>
         <div class="row">
           <div class="col-4">
-            <label for="filas" class="form-label">Filas</label>
+            <label for="filas" class="form-label">Alternativas </label>
             <input type="number" class="form-control custom-input" id="filas" (input)="updateFilas($event)" name="filas">
           </div>
 
           <div class="col-4">
-            <label for="columnas" class="form-label">Columnas</label>
+            <label for="columnas" class="form-label">Criterios </label>
             <input type="number" class="form-control custom-input" id="columnas" (input)="updateColumnas($event)" name="columnas">
           </div>
 
@@ -57,12 +73,14 @@
           <button type="button" class="btn btn-danger" (click)="eliminarFila()">Eliminar Fila</button>
           <button type="button" class="btn btn-primary" (click)="agregarColumna()">Agregar Columna</button>
           <button type="button" class="btn btn-danger" (click)="eliminarColumna()">Eliminar Columna</button>
+          <button type="button" class="btn btn-danger mt-3" (click)="eliminarMatriz()">Eliminar Matriz</button>
         </div>
 
-        <h3>Importar y Exportar</h3>
+        <h3>Importar archivo CSV</h3>
         <!-- Botones de importar y exportar -->
         <div class="import-export-buttons">
           <input type="file" (change)="importFromCSV($event)">
+          <h4>Exportar Matriz a CSV</h4>
           <img src="../../../assets/img/excel.png" alt="Icono de Excel" class="excel-icon">
           <button class="btn btn-success" (click)="exportToCSV()">Exportar a CSV</button>
         </div>
@@ -85,7 +103,7 @@
           </tr>
 
           <tr>
-            <th>Filas</th>
+            <th>Criterios</th>
             <ng-container *ngFor="let columna of columnasArray; let i = index">
               <th>
                 <input type="text" class="form-control custom-input" [(ngModel)]="nombresFilasSuperior[i]" name="fila{{i}}">
@@ -99,7 +117,7 @@
               <input type="text" class="form-control custom-input" [(ngModel)]="nombresFilasIzquierda[i]" name="fila{{i}}">
             </td>
             <td *ngFor="let celda of fila; let j=index">
-              <input type="number" class="form-control custom-input" [value]="celda.value" (input)="actualizarValor($event, celda)">
+              <input type="number" class="form-control custom-input-valor" [value]="celda.value" (input)="actualizarValor($event, celda)">
             </td>
           </tr>
         </tbody>
